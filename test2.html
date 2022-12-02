@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            body{
+                background-color: beige;
+            }
+            #id-first > p{
+                color: green;
+            }
+            /* p{
+                color: rgb(87, 22, 185);
+            } */
+            ul + p {
+                color: red;
+            }
+            html{
+                box-sizing: border-box; 
+            }
+            *, *:before, *:after{
+                box-sizing: inherit;
+            }
+            .box-1{
+                display: inline-block;
+                color: green;
+                border: 1px solid rebeccapurple;
+                padding: 40px;
+                margin-top: 10px;
+                
+                
+                
+            }
+            .box-2{
+                display: inline-block;
+                color: blue;
+                border: 1px solid green;
+                padding: 40px;
+                margin-top: 10px;
+                margin-left: 200px; 
+            }
+
+            .box-1,.box-2{
+                width: 200px;
+                height: 200px;
+                
+            }
+            .box{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            button{
+                display: block;
+                background-color: darkolivegreen;
+                border: none;
+                color: white;
+                padding: 5px;
+                margin-top: 10px;
+            }
+            button:hover{
+                cursor: pointer;
+                opacity: 50%;
+            }
+            #para-id{
+                color: brown     !important;
+            }
+        </style>
+        <script src="test.js"></script>
+    </head>
+    <body>
+        <h1>My First HTML page</h1>
+        <p>My name is Usman im interested in building applications</p>
+        <p>Here is my <a href="https://www.tutorialspoint.com/index.htm">linked</a> in profile, Connect with me here</p>
+        <ul>
+            <li>I know javascript</li>
+            <li>I know HTML and CSS</li>
+            <li>Should learn react</li>
+        </ul>
+        <p>Here's my Favourite Picture</p>
+        <img src="game2.jpeg" alt="A Game Image" width="100%">
+        <button onclick="writeToPage()">CLICK ME</button>
+        <button id="my-btn" onclick="writeToPageSecond()">CLICK ME2</button>
+
+
+        <div class="main-container">
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+                <li>item 3</li>
+            </ul>
+        </div>
+        
+        <div class="footer">
+            <ul>
+                <li>footer 1</li>
+                <li>footer 2</li>
+                <li>footer 3</li>
+            </ul>
+        </div>
+        
+        
+        <div id="id-first">
+            <p>First Item</p>
+            <p>Second Item</p>
+            <p>Third Item</p>
+            <div>
+                <p>Fourth Item</p>
+            </div>
+        </div>
+
+        <div>
+            <ul>
+                <li>json selector 1</li>
+                <li>json selector 2</li>
+                <li>json selector 3</li>
+            </ul>
+            <p>First Para after ul</p>
+            <p>Second Para after ul</p>
+
+        </div>
+        <p style="display: inline;">How we can add same properties to 2 different classes 1??</p>
+        <p style="display: block;">How we can add same properties to 2 different classes 2??</p>
+        <p style="display: block;">How we can add same properties to 2 different classes 3??</p>
+        <span class="2boxes">
+            <div class="box-1 box">
+                <p>Box 1</p>
+            </div>
+            <div class="box-2 box">
+                <p>Box 2</p>
+            </div>
+        </span>
+        <button>ClickMe</button>
+        <p id="para-id" style="color: green;">This will be in Green</p>
+
+        <p style="display: inline-block;">How we can add same properties to 2 different classes 1??</p>
+        <p style="display: inline;">How we can add same properties to 2 different classes 2??</p>
+        <p style="display: block;">How we can add same properties to 2 different classes 3??</p>
+    </body>
+</html>
+
+

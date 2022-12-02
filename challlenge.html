@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<head>
+<title>Challenge</title>
+<script type="text/javascript" async src="test.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla&family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+<style>
+    html{
+        box-sizing: border-box;
+    }
+    *, *:before, *:after{
+        box-sizing: inherit;
+    }
+    h3,h2,p{
+        margin: 0px;
+    }
+    body{
+        padding: 100px;
+        font-family: 'Karla';
+        font-size: 16px;
+        font-weight: 400px;
+    }
+    .container{
+        width: 600px;
+        height: 400px;
+     
+        box-shadow: -1px 3px 24px 3px rgba(0,0,0,0.75);
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    .top-box{
+        width: 100%;
+        height: 40%;
+        background-color: white;
+        padding: 20px;
+    }
+    .bottom-box{
+        width: 100%;
+        height: 60%;
+        color: white;
+       
+    }
+    .left-box{
+        display: inline-block;
+        width: 50%;
+        height: 100%;
+        background-color: blueviolet;
+        vertical-align: top;
+        background-color: #4BD5E8;
+        padding: 20px;
+        
+    }
+
+    .right-box{
+        display: inline-block;
+        width: 50%;
+        height: 100%;
+        background-color: green;
+        vertical-align: top;
+        background-color:  #43E5E8;
+        padding: 20px;
+    }
+    button{
+        
+        background-color: #DAF511;
+        border: none;
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    button:hover{
+        cursor: pointer;
+        background-color: #B5A70B;
+        transform: scale(1.05);
+       
+        
+    }
+    .top-box h2{
+        color: #2ab2af;
+        margin-bottom: 15px;
+    }
+    .top-box h3{
+        color: #DAF511;
+        margin-bottom: 10px;
+    }
+    .left-box h3{
+        margin-bottom: 20px;
+    }
+    .left-box p{
+        margin-bottom: 20px;
+    }
+    .price-container{
+        margin-bottom: 10px;
+    }
+    .price{
+        font-weight: 700;
+        font-size: 1.8rem;
+        display: inline-block;
+    }
+    .price-freq{
+        display: inline-block;
+        margin-left: 5px;
+        opacity: 0.8;
+        font-size: 0.8rem;
+        position: relative;
+        top: -3px;
+    }
+    ul{
+       padding: 0px;
+       list-style: none;
+       opacity: 0.9;
+       font-size: 0.8rem;
+
+    }
+</style>
+</head>
+<body>
+    <html>
+        <div class="container">
+            <div class="top-box">
+                <h2>Join Our Community</h2>
+                <h3>30-day, hassle-free money back guarantee</h3>
+                <p>Gain access to our full library of tutorials along with expert code reviews. Perfect for any developers who are serious about honning thier skills.</p>
+            </div>
+            <div class="bottom-box">
+                <div class="left-box">
+                    <h3>Monthly Subscription</h3>
+                    <div class="price-container">
+                        <div class="price">$29</div>
+                        <div class="price-freq">per month</div>
+                    </div>
+                    <p>Full access for less than $1 a day</p>
+                    <button onclick="alertUser()">Sign Up</button>
+                </div><div class="right-box">
+                    <h3>Why Us</h3>
+                    <ul>
+                        <li>Tutorials by industry experts</li>
+                        <li>Peer & expert code review</li>
+                        <li>Coding Exercises</li>
+                        <li>Access to our Github repos</li>
+                        <li>Community forum</li>
+                        <li>Flashcard decks</li>
+                        <li>New videos every week</li>
+                    </ul>
+                </div>
+
+            </div>
+            
+        </div>
+    </html>
+</body>

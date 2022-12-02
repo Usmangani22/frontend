@@ -1,0 +1,615 @@
+we can target css on 3 different items
+
+1.any html tag 
+2.class-name
+3.id
+
+#id{
+    color:red;
+}
+.classs-name{
+    color:red;
+}
+p{
+
+}
+h1{
+
+}
+
+1st css combinator
+<div class="main-container">
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+</div>
+
+<div class="footer">
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+</div>
+
+if we have our html like this and we set style for <li></li>
+
+li {
+    color: red;
+}
+
+then all <li> </li> elements in page will get red color.
+
+how to target specific elements ??
+
+.main-container li{
+    color:red;
+}
+
+this will target li of only that class.
+
+
+.main-container is pre selector
+li is main selector
+
+2nd css combinator
+
+<div id="id-first">
+    <p>First Item</p>
+    <p>Second Item</p>
+    <p>Third Item</p>
+    <div>
+        <p>Fourth Item</p>
+    </div>
+</div>
+
+how to target only first 3 <p></p> items
+
+#id-first p{
+    color: red;
+}
+
+will change color of all <p></p> items
+
+#id-first > p{
+    color: red;
+}
+
+will change direct <p></p> decendents of #id-first div 
+
+3rd way:
+
+<div>
+    <ul>
+        <li>json selector 1</li>
+        <li>json selector 2</li>
+        <li>json selector 3</li>
+    </ul>
+    <p>First Para after ul</p>
+    <p>Second Para after ul</p>
+
+</div>
+
+if we have to style only the first para after <ul></ul>
+then 
+ul + p {
+    color: red;
+}
+
+2nd and third methods are not recommended as we change dom structure the css will fail.
+
+insted of first if we want to set style for all <p></p> items after <ul></ul>
+then 
+ul ~ p{
+    color:red;
+}
+
+instaed we can set classes for those paras and use those classes to set <style></style>
+
+<div>
+    <ul>
+        <li>json selector 1</li>
+        <li>json selector 2</li>
+        <li>json selector 3</li>
+    </ul>
+    <p class="blue-color-class">First Para after ul</p>
+    <p>Second Para after ul</p>
+
+</div>
+
+and statements in CSS
+
+<p class="test-class">some text here</p>
+<div class="test-class">some text here</div>
+
+p[class="test-class"]{
+    color: red;
+}
+
+will target p elements with class test-class
+
+<div class="box-1">
+    <p>Box 1</p>
+</div>
+<div class="box-2">
+    <p>Box 2</p>
+</div>
+
+.box-1{
+    color: green;
+    border: 1px solid rebeccapurple;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+}
+.box-2{
+    color: blue;
+    border: 1px solid green;
+    padding: 20px;
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+}
+
+now we see that we ave same width and height for both classes
+
+
+to avoid writing same code again and again
+
+.box-1,.box-2{
+    width: 200px;
+    height: 200px;
+}
+
+we can do This
+
+or one tag can be linked multiple different classes
+
+<div class="box-1 box">
+    <p>Box 1</p>
+</div>
+<div class="box-2 box">
+    <p>Box 2</p>
+</div>
+
+box is a class linked to both the div tags
+
+
+.box{
+    width: 200px;
+    height: 200px;
+
+}
+
+will also work in the same way.
+
+
+user action pseudo classes:
+
+
+casceding or when there are multiple styles changing the same element which one will take precedence.
+Note: if we inspect a webelement then we see multiple styles to it and some of them being striked off..that means those css rules are 
+canncelled and not applied as other rules are taking precedence.
+two factors
+
+1. Location of the css rule in the sheet.
+2.Specificity of css rule.
+
+1.Location
+
+<p>para 1</p>
+<p>para 2</p>
+
+p{
+    color:blue;
+
+}
+p{
+    color:green;
+
+}
+p{
+    color:red;
+}
+
+at the end we have red color..so the paragraphs will be in red color.
+
+
+2.Specificity
+
+<div class="test-class" id="test-id">
+    <ul>
+        <li>item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+</div>
+
+style:
+
+li{
+    color:red;
+}
+
+.test-class{
+    color: black;
+}
+#test-id{
+    color:green;
+}
+
+the precedence
+1.id
+2.class
+3.tag
+
+highest Specificity for id then for class then for tag..
+
+so the color will be green
+
+///then if we use combinators
+
+<div class="test-class" id="test-id">
+    <ul>
+        <li class="li-1">item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+</div>
+
+
+
+ul .li-1{
+    color:blue;
+}
+
+.li-1{
+    color:black;
+}
+
+blue will get precedence...as this has high Specificity..
+
+how to calculate that ??
+
+/* 
+id selectors = 0
+class selectors = 1
+tag selectors = 1
+
+total = 011
+*/
+ul .li-1{
+    color:blue;
+}
+
+/* 
+id selectors = 0
+class selectors = 1
+tag selectors = 0
+
+total = 010
+*/
+
+.li-1{
+    color:black;
+}
+
+011 is 1 point higher specific than 010 so 011 rule will be applied.
+
+
+
+
+<div class="test-class" id="test-id">
+    <ul>
+        <li class="li-1" id="li-id">item 1</li>
+        <li>item 2</li>
+        <li>item 3</li>
+    </ul>
+</div>
+
+
+/* 
+id selectors = 0
+class selectors = 2
+tag selectors = 0
+
+total = 020
+*/
+
+.test-class,.li-1{
+    color: black;
+}
+
+/* 
+id selectors = 2
+class selectors = 0
+tag selectors = 0
+
+total = 200
+*/
+
+#test-id,#li-id{
+    color:orange;
+}
+
+200 wins and color will be orange.
+
+
+then we can pass inline styles which gets highest precedence
+
+
+<p id="para" style="color:green;">This para will be in green</p>
+
+
+now if we set style using id, still inline will take precedence
+
+
+#para{
+    color:red;
+}
+
+
+important keyword:
+
+<p id="para" style="color:green;">This para will be in green</p>
+#para{
+    color:red !important;
+}
+
+now this para will be in red color as we have set important to it and that takes highest precedence
+
+
+
+margin: how much gap or margin should be there from 1 element to another
+
+box-1
+//this gap between box-1 and box-2 is margin
+box-2
+
+then comes border...
+
+if a box has border how many pixels it is..
+
+then padding..
+
+padding is from the border how much the content has to have the space in all directions
+
+then the actual content.
+
+width and height ...
+
+we can see this in developer tools ..
+
+inline vs block vs inline block
+
+to the display property we can pass
+
+block 
+inline
+inline-block
+CSSgrid
+flexbox
+
+by default most of the elements will have block type display
+
+for p by default its block..
+
+for span by default its inline..
+
+block will occupy the whole width of the page
+
+inline will occupy only till that element
+
+block respects width and height passed. as CSS
+
+inline elements doesn't respect or obey the width and height properties
+
+block will break to a new line before and after..
+
+inline will not break to a new line before and after.
+
+<p style="display: inline;">How we can add same properties to 2 different classes 1??</p>
+<p style="display: block;">How we can add same properties to 2 different classes 2??</p>
+<p style="display: inline;">How we can add same properties to 2 different classes 3??</p>
+
+1st p: in a first line it writes How we can add same properties to 2 different classes 1??
+2nd p: block is always a new line so in a new line we will see  How we can add same properties to 2 different classes 2??
+3rd p: inline always the current line. but current line is line 3 ..as block write in line 2 and left at line 3. so in third line we see How we can add same properties to 2 different classes 3??
+
+after 3rd p ..it ends in the same line..now if the next element is bigger than the space available..then it goes to next line else will be added to same line.
+
+
+
+
+inline-block property;
+
+from inline we get line proerty that means starts in the same line also breaks at the same line..
+
+from block we dont get the line break property..usually this starts in new line and breaks to new line..but inline-block doesn't get this..
+
+from block it gets the property or obeys the rules of width and height...
+
+
+box-sizing:
+
+after setting width and height of a box and inside it if we set any text and add padding to it..then the box width and height break..
+
+.box-1{
+    display: inline-block;
+    color: green;
+    border: 1px solid rebeccapurple;
+    padding: 20px;
+    margin-top: 10px;
+    text-align: center;
+    width=200px;
+    height: 200px;
+}
+
+as soon as we change padding it changes the box size..if we want to make the size fixed..
+
+
+.box-1{
+    display: inline-block;
+    color: green;
+    border: 1px solid rebeccapurple;
+    padding: 20px;
+    margin-top: 10px;
+    text-align: center;
+    width=200px;
+    height: 200px;
+    box-sizing: border-box;
+}
+
+with this no matter what we change padding to it always stays in the box and box size is always 200*200
+
+and if we want to set this rule at 1 place then
+
+html{
+    box-sizing: border-box; 
+}
+
+will work for whole boxes in html...
+
+
+
+
+position property:
+
+we have 
+
+static -- this is default
+relative
+fixed
+absolute
+sticky
+
+
+fixed: doesnt take any space it just overlaps if there are any other items.
+
+relative:
+
+if set position as relative it takes precedence..
+it actually goes on top of navbar..though navbar is fixed..
+
+also it again can be controled by z-index...that element will be shown on top of another.
+
+if we set z-index as 1 in one of the class that takes highgest priority.
+
+also if we set position to relevent and add some margin to it then that margin is an addition to existing margin..
+
+
+absolute:
+
+absolute has to be in the relative element.
+
+.absolute-class{
+   
+    width: 20px;
+    height: 20px;
+    background-color: brown;
+    top: 20px;
+    right: 20px;
+   
+}
+
+if we dont set position as absolute this element will be added to a relative class but we wont be able to control its position..top , right wont work
+
+.absolute-class{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: brown;
+    top: 20px;
+    right: 20px;
+    
+}
+
+as we have set position to absolute we now can place this absolute element as needed.. now this element will be 20px down and 20px gap in right.
+
+
+if we dont palce it inside a relatively positioned element...it will go to the view port ..means the top of page and gets placed there.
+
+
+Html units:
+
+pixels: as we pass
+rem:
+em:
+percentages: as we pass...
+
+rem is relative element..basically inn css html tag we set font-size 
+
+html{
+    font-size: 16px:
+}
+
+now we want all other elements to make uae of this parent property ..
+
+.absolute-class{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: brown;
+    top: 20px;
+    right: 20px;
+    font-sizt: 1rem;
+    
+}
+
+16*1 = 16 px;
+
+if u set it to 2 rem... then 16*2 px
+
+
+
+if we dont want that from rem and and we want it from parent element we need to set as 1 em or 2 em
+
+
+https://fonts.google.com/
+
+is a website to find custom fonts from google..
+
+line-height: 10px
+or line-height: 1 rem or 1 em..
+
+
+colors:
+hexcodes
+rgb(16,255,255);
+
+rgba(16,255,255,1);
+
+1 means 100% opacity.
+
+0.5 means 50% opacity.
+
+margin: 20px 5px 10px 50px;
+
+clockwise
+
+margin-top: 20px;
+margin-right: 5px;
+margin-bottom: 10px
+margin-left: 50px;
+
+both above statements are same...
+
+
+
+
+4 rules for html:
+
+    1.You need a design of your page. how it should look
+    2.How the html looks like basically splitting containners etc. and writing html
+    3.Design the page to show the containers. how to achieve the layout.
+    4.style each element.
+
+
+
+
+
+
+

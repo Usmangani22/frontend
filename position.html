@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <style>
+        html{
+            font-size: 18px;
+        }
+        nav{
+            background-color: blueviolet;
+            color: white;
+            height: 60px;
+            position: fixed;
+            width: 100vw;
+            top:0;
+            left : 0;
+            z-index: 1;
+            font-family: 'Libre Baskerville', serif;
+            font-weight: 600;
+        }
+        h4{
+           
+            line-height: 60 px;
+            padding-left: 10px;
+        }
+        .box{
+            height: 200px;
+            background-color: coral;
+            margin: 20px;
+           
+        }
+        .super-div{
+            margin-top: 80px;
+            font-size: 16px;
+        }
+        #relative-id{
+            position: relative;
+            top: 10px;
+            border: 1px solid black;
+           font-size: 8px;
+        }
+        .absolute-class{
+            position: absolute;
+            width: 80%;
+            height: 20%;
+            background-color: rgb(196, 108, 108);
+            top: 20px;
+            left: 20px;
+            font-size: 3em;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 500;
+        }
+        p{
+            line-height: 1rem;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <h4>This is our Navbar</h4>
+    </nav>
+    <div class="super-div">
+        <div class="box relative-class" id="relative-id">
+            <div class="absolute-class">Some Text</div>
+        </div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <p>Everyone has the right to freedom of thought, conscience and religion; this right includes freedom to change his religion or belief, and freedom, 
+            either alone or in community with others and in public or private, to manifest his religion or belief in teaching, practice, 
+            worship and observance. Everyone has the right to freedom of opinion and expression; 
+            this right includes freedom to hold opinions without interference and to seek, receive and impart information and ideas through any media and regardless of frontiers. 
+            Everyone has the right to rest and leisure, 
+            including reasonable limitation of working hours and periodic holidays with pay.</p>
+    </div>
+    
+</body>

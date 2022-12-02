@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Memes</title>
+        <script src="meme-generator.js"></script>
+        <style>
+            
+            button{
+                border: 2px solid gold;
+                margin: 5px;
+                background-color: rgb(130, 135, 139);
+                font: 100;
+                font-style: normal;
+                align-items: center;
+            }
+            body{
+                background-color: burlywood;
+            }
+            .action-class{
+                float: right;
+                border: 1px solid black;
+
+            }
+            .sample-span {
+                color: blueviolet;
+            }
+            img{
+                border: 2px solid black;
+                max-width: 300px;
+                max-height: 200px;
+            }
+            h3{
+                color: crimson;
+            }
+           
+
+        </style>
+    </head>
+    <body>
+        <section class="side-bar">
+            <div id="actions" class="action-class">
+                <h3>Actions</h3>
+                <button onclick="showRandomMemes()">Show a Meme</button>
+                <br>
+                <button onclick="tellRandomJokes()">Tell Me a Joke</button>
+                <br>
+                <button onclick="tellRandomQuotes()">Random Quote</button>
+                <br>
+                <button onclick="showRdiddles()">Riddle Me</button>
+                <br>
+                <button onclick="showRiddleAnswer()">Riddle Answer</button>
+                <br>
+            </div>
+            <div id="output">
+                <h3>Output</h3>
+                <span class="sample-span">
+                    <h3 class="memes-class-html">Random Memes Output</h3>
+                    <span class="memes-class-span"></span>
+                    <h3 class="jokes-class-html">Random Jokes Output</h3>
+                    <span class="jokes-class-span"></span>
+                    <h3 class="quotes-class-html">Random Quotes Output</h3>
+                    <span class="quotes-class-span"></span>
+                    <h3 class="riddle-class-html">Riddle Me Output</h3>
+                    <span class="riddle-class-span">
+
+                    </span>
+                    <!-- <p class="riddleanswer-class-html">Riddle Answer</p>
+                    <span class="riddle-class-span">
+                       
+                    </span> -->
+                </span>
+    
+            </div>
+        </section>
+       
+    </body>
+</html>
